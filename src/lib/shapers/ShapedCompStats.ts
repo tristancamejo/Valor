@@ -91,9 +91,9 @@ export default class ShapedCompStats {
    */
   private getCompTierEmoji(tier: string): string {
     return `<:${
-      ValorantTierEmojis.filter(
+      ValorantTierEmojis.find(
         (e) => e.name === tier.toLowerCase().replaceAll(" ", "_")
-      )[0]!.identifier
+      )?.identifier ?? tier.toLowerCase().replaceAll(" ", "_")
     }>`;
   }
 }
