@@ -1,5 +1,5 @@
-import type { AgentUsed } from "./types";
-import { MatchHistoryDataV3, Team } from "../types/types";
+import { MatchHistoryDataV3, Team } from '../types/types';
+import type { AgentUsed } from './types';
 
 export default class ShapedMatchHistory {
 	public constructor(private readonly raw: MatchHistoryDataV3[], private readonly puuid: string) {}

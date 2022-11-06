@@ -1,4 +1,4 @@
-import type { PlayerCard } from "./types";
+import type { PlayerCard } from './types';
 
 export interface MatchHistoryDataV3 {
 	metadata: MatchMetadata;
@@ -34,9 +34,9 @@ export interface PlantEvents {
 }
 
 export enum PlantSite {
-	A = "A",
-	B = "B",
-	C = "C",
+	A = 'A',
+	B = 'B',
+	C = 'C',
 }
 
 export interface PlayerLocationsOn {
@@ -59,10 +59,10 @@ export interface EdBy {
 }
 
 export enum EndType {
-	BombDefused = "Bomb defused",
-	BombDetonated = "Bomb detonated",
-	Eliminated = "Eliminated",
-	RoundTimerExpired = "Round timer expired",
+	BombDefused = 'Bomb defused',
+	BombDetonated = 'Bomb detonated',
+	Eliminated = 'Eliminated',
+	RoundTimerExpired = 'Round timer expired',
 }
 
 export interface Teams {
@@ -258,7 +258,7 @@ export interface DamageEvent {
 }
 
 export interface PlayerAssets {
-	card: Omit<PlayerCard, "id">;
+	card: Omit<PlayerCard, 'id'>;
 	agent: Agent;
 }
 
@@ -297,6 +297,6 @@ export interface OS {
 }
 
 export enum Team {
-	Blue = "Blue",
-	Red = "Red",
+	Blue = 'Blue',
+	Red = 'Red',
 }
