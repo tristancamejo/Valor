@@ -1,49 +1,52 @@
-import { Command, type ChatInputInteraction } from '@disploy/framework';
-import { ApplicationCommandOptionType } from 'discord-api-types/v10';
+import { APIApplicationCommandOption, ApplicationCommandOptionType } from 'discord-api-types/v10';
+import type { ChatInputCommand, ChatInputInteraction } from 'disploy';
 import { fetchAccountData, fetchCompStats } from '../lib';
 
 const a = '➤';
 
-export default class CompetitiveStats extends Command {
-	public constructor() {
-		super({
-			name: 'competitive',
-			description: 'Get competitive stats for a player',
-			options: [
-				{
-					name: 'username',
-					description: 'The username of the player',
-					type: ApplicationCommandOptionType.String,
-					required: true,
-				},
-				{
-					name: 'tag',
-					description: 'The tag of the player',
-					type: ApplicationCommandOptionType.String,
-					required: true,
-				},
-			],
+class CompetitiveStats implements ChatInputCommand {
+	public name = 'competitive';
+	public description = 'Get competitive stats for a player';
+
+	public options: APIApplicationCommandOption[] = [
+		{
+			name: 'username',
+			description: 'The username of the player',
+			type: ApplicationCommandOptionType.String,
+			required: true,
+		},
+		{
+			name: 'tag',
+			description: 'The tag of the player',
+			type: ApplicationCommandOptionType.String,
+			required: true,
+		},
+	];
+
+	private async fetchStats(username: string, tag: string) {
+		const res = await fetchAccountData({
+			name: username,
+			tag,
 		});
+
+		const compStats = await fetchCompStats({
+			region: res.region,
+			name: res.name,
+			tag: res.tag,
+		});
+
+		return { res, compStats };
 	}
 
-	override async slashRun(interaction: ChatInputInteraction) {
+	public async run(interaction: ChatInputInteraction) {
 		const username = interaction.options.getString('username');
 		const tag = interaction.options.getString('tag');
 
 		interaction.deferReply();
 
+		const { res, compStats } = await this.fetchStats(username, tag);
+
 		try {
-			const res = await fetchAccountData({
-				name: username,
-				tag,
-			});
-
-			const compStats = await fetchCompStats({
-				region: res.region,
-				name: res.name,
-				tag: res.tag,
-			});
-
 			return void interaction.editReply({
 				embeds: [
 					{
@@ -64,3 +67,5 @@ export default class CompetitiveStats extends Command {
 		}
 	}
 }
+
+export default new CompetitiveStats();

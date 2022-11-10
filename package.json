@@ -9,12 +9,11 @@
 		"format": "prettier --write \"**/*.{ts,md}\""
 	},
 	"dependencies": {
-		"@disploy/framework": "^0.3.0",
-		"discord-api-types": "^0.37.16"
+		"discord-api-types": "^0.37.16",
+		"disploy": "^0.0.0-ecad4b2"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.9",
-		"disploy": "^0.3.0",
 		"prettier": "^2.7.1",
 		"typescript": "^4.8.4"
 	}
