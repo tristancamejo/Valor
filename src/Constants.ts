@@ -153,4 +153,19 @@ export const ValorantTierEmojis = [
 		url: 'https://cdn.discordapp.com/emojis/971675273911218196.png',
 		identifier: 'radiant:971675273911218196',
 	},
+	{
+		name: 'ascendant_1',
+		id: '1041552432259407922',
+		identifier: 'ascendant_1:1041552432259407922',
+	},
+	{
+		name: 'ascendant_3',
+		id: '1041552433844846653',
+		identifier: 'ascendant_3:1041552433844846653',
+	},
+	{
+		name: 'ascendant_2',
+		id: '1041552435426119710',
+		identifier: 'ascendant_2:1041552435426119710',
+	},
 ];
