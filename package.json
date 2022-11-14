@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"discord-api-types": "^0.37.16",
-		"disploy": "^0.0.0-ecad4b2"
+		"disploy": "^0.3.1-dev.1668390840-99bf5b9.0"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.9",

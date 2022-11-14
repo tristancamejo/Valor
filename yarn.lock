@@ -343,10 +343,10 @@ discord-api-types@^0.37.14, discord-api-types@^0.37.16:
   resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.37.16.tgz#3cc5fb56d34d12f57f20f81708ac0963b24c3e96"
   integrity sha512-H0FDY6+ww4YZe1+L+2ERWU3KsVSInWLvK0TeImhiTi49DXff8sFLnqqnEiEdMEhwFlkQMUIe4xL5Py046s+Ksg==
 
-disploy@^0.0.0-ecad4b2:
-  version "0.0.0-ecad4b2"
-  resolved "https://registry.yarnpkg.com/disploy/-/disploy-0.0.0-ecad4b2.tgz#b74d1eea01ecad1b75942eaa34d5b807d94e09be"
-  integrity sha512-9MH70v2duouq4dIh6BZMcq+rJMXfX39U9ucl9H7cphiuo1i6eDo1fB55z1UfTY9aAiFxuPLEFlMvSRj0s/E9iw==
+disploy@^0.3.1-dev.1668390840-99bf5b9.0:
+  version "0.3.1-dev.1668390840-99bf5b9.0"
+  resolved "https://registry.yarnpkg.com/disploy/-/disploy-0.3.1-dev.1668390840-99bf5b9.0.tgz#4948118022918bfa3cba8d5f78c9cada34ab5687"
+  integrity sha512-nT4YbCg+6ukSJEUpf9wIEdJMviW5Chv0GSW1+vX9Q8tutPR+XZY46VSjHdm2WTFejH7KcIE0NFK68tamc1u8Qw==
   dependencies:
     colorette "^2.0.19"
     discord-api-types "^0.37.14"
